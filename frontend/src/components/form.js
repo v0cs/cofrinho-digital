@@ -75,7 +75,7 @@ const Form = ({ onEdit }) => {
         </select>
       </InputArea>
       <InputArea>
-        <Label>Descricao</Label>
+        <Label>Descrição</Label>
         <input name="descricao" type="text" />
       </InputArea>
       <InputArea>
