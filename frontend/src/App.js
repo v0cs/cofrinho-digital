@@ -20,30 +20,30 @@ const Container = styled.div`
 const Title = styled.h2``;
 
 function App() {
-  const [movimentacao, setMovimentacao] = useState([]);
+  const [movimentacoes, setMovimentacoes] = useState([]);
   const [onEdit, setOnEdit] = useState([null]);
 
-  const getMovimentacao = async () => {
+  const getMovimentacoes = async () => {
     try{
-      const res = await axios.get("http://localhost:3000");
-      setMovimentacao(res.data.sort((a, b) => new Date(a.data) - new Date(b.data)));
+      const res = await axios.get("http://localhost:8800");
+      setMovimentacoes(res.data.sort((a, b) => new Date(a.data) - new Date(b.data)));
     }catch(err){
       toast.error(err);
     }
   };
 
   useEffect(() => {
-    getMovimentacao();
-  }, [setMovimentacao]);
+    getMovimentacoes();
+  }, [setMovimentacoes]);
 
   return (
     <>
       <Container>
         <Title>Movimentação Financeira</Title>
-        <Form/>
-        <Grid movimentacao = {movimentacao}/>
+        <Form onEdit={onEdit} setOnEdit={setOnEdit} getMovimentacoes={getMovimentacoes}/>
+        <Grid movimentacoes = {movimentacoes} setMovimentacoes={setMovimentacoes} setOnEdit={setOnEdit}/>
       </Container>
-      <ToastContainer autoClose={3000} position="BOTTOM_LEFT" />
+      <ToastContainer autoClose={8800} position="BOTTOM_LEFT" />
       <GlobalStyle />
     </>
   );
