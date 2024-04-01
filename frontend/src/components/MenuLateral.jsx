@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import {UserOutlined,} from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { UserOutlined, } from '@ant-design/icons';
+import { Layout, Menu, theme } from 'antd';
+import { Space, Table, Tag } from 'antd';
+import { HiDocumentReport } from "react-icons/hi";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
+import Tabela from "../components/Tabela";
+
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
@@ -10,14 +15,42 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
-import { HiDocumentReport } from "react-icons/hi";
-import { FaMoneyBillTransfer } from "react-icons/fa6";
 
 const items = [
-  getItem('Movimentação', '1', <FaMoneyBillTransfer/>),
+  getItem('Movimentação', '1', <FaMoneyBillTransfer />),
   getItem('Relatório', '2', <HiDocumentReport />),
   getItem('Usuário', '3', <UserOutlined />),
 ];
+
+const data = [
+  {
+    key: '1',
+    tipo: 'Despesa',
+    lastName: 'Brown',
+    valor: 32,
+    descricao: 'New York No. 1 Lake Park',
+    categoria: ['nice', 'developer'],
+  },
+  {
+    key: '2',
+    tipo: 'Receita',
+    lastName: 'Green',
+    valor: 42,
+    descricao: 'London No. 1 Lake Park',
+    categoria: ['loser'],
+  },
+  {
+    key: '3',
+    tipo: 'Despesa',
+    lastName: 'Black',
+    valor: 32,
+    descricao: 'Sydney No. 1 Lake Park',
+    categoria: ['cool', 'teacher'],
+  },
+]
+
+const { Column, ColumnGroup } = Table;
+
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -41,6 +74,7 @@ const App = () => {
           }}
         />
         <Content>
+          <Tabela  data={data}/>
         </Content>
         <Footer
           style={{

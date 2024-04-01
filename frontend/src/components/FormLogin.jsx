@@ -1,11 +1,14 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
+
 const onFinish = (values) => {
   console.log('Success:', values);
 };
+
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
+
 const FormLogin = () => (
   <Form
     name="basic"
@@ -57,10 +60,11 @@ const FormLogin = () => (
         span: 16,
       }}
     >
-      <Button type="primary" htmlType="submit" style={{width:'100%'}}>
+      <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
         Entrar
       </Button>
     </Form.Item>
   </Form>
 );
+
 export default FormLogin;
