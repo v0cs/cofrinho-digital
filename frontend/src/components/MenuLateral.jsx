@@ -81,7 +81,7 @@ const App = () => {
             textAlign: 'center',
           }}
         >
-          Programacao WEB ©{new Date().getFullYear()} Created by Celeste
+          Cofrinho Digital ©{new Date().getFullYear()} Created by Celeste
         </Footer>
       </Layout>
     </Layout>
