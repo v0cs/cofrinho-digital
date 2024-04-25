@@ -1,5 +1,6 @@
 import React from 'react';
 import { Space, Table, Tag } from 'antd';
+import styles from './Tabela.module.css';
 
 const { Column, ColumnGroup } = Table;
 
@@ -28,7 +29,7 @@ const data = [
 ];
 
 const Tabela = () => (
-    <Table dataSource={data}>
+    <Table dataSource={data} className={styles.tabela}>
         <Column title="Tipo" dataIndex="tipo" key="tipo" />
         <Column
             title="Categoria"

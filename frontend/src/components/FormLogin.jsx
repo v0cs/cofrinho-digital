@@ -1,23 +1,11 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
+import { FaUser } from "react-icons/fa";
+import { FaKey } from "react-icons/fa";
 
-const onFinish = (values) => {
-  console.log('Success:', values);
-};
-
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
-
-const FormLogin = () => (
+const FormLogin = ({onFinish}) => (
   <Form
     name="basic"
-    labelCol={{
-      span: 8,
-    }}
-    wrapperCol={{
-      span: 16,
-    }}
     style={{
       maxWidth: 600,
     }}
@@ -25,11 +13,9 @@ const FormLogin = () => (
       remember: true,
     }}
     onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
     autoComplete="off"
   >
     <Form.Item
-      label="Usuario"
       name="Usuario"
       rules={[
         {
@@ -38,11 +24,10 @@ const FormLogin = () => (
         },
       ]}
     >
-      <Input />
+      <Input placeholder='Usuário' prefix={<FaUser color='#1677ff' style={{marginRight: '5px'}}/>}/>
     </Form.Item>
 
     <Form.Item
-      label="Senha"
       name="Senha"
       rules={[
         {
@@ -51,16 +36,11 @@ const FormLogin = () => (
         },
       ]}
     >
-      <Input.Password />
+      <Input.Password placeholder='Senha' prefix={<FaKey color='#1677ff' style={{marginRight: '5px'}} />} />
     </Form.Item>
 
-    <Form.Item
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+    <Form.Item>
+      <Button block type="primary" htmlType="submit">
         Entrar
       </Button>
     </Form.Item>

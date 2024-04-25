@@ -1,10 +1,26 @@
-.body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+
+.sectionLeft {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #1677ff;
+    float: left;
+    width: 50%;
     height: 100vh;
-    background-color: var(--fundo);
+}
+
+.sectionLeft h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.sectionRight {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    width: 50%;
+    height: 100vh;
 }
