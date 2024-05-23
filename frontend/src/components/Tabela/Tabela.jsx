@@ -29,7 +29,7 @@ const data = [
 ];
 
 const Tabela = () => (
-    <Table dataSource={data} className={styles.tabela}>
+    <Table dataSource={data} className={styles.tabela} style={{padding: '20px'}}>
         <Column title="Tipo" dataIndex="tipo" key="tipo" />
         <Column
             title="Categoria"

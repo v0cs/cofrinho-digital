@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { UserOutlined, } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
-import { Space, Table, Tag } from 'antd';
 import { HiDocumentReport } from "react-icons/hi";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
-import Tabela from "./Tabela";
 import { useNavigate } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
